@@ -8,7 +8,7 @@ test('with first param', () => {
 test('with mods', () => {
   expect(classNames(
     'app',
-    { 'hovered': true, 'selected': false }
+    { hovered: true, selected: false }
   )).toBe('app hovered')
 })
 
@@ -20,11 +20,10 @@ test('with additional', () => {
   )).toBe('app dark size')
 })
 
-
 test('with undefined', () => {
   expect(classNames(
     'app',
-    { 'hovered': undefined, 'selected': undefined },
+    { hovered: undefined, selected: undefined },
     [undefined, 'dark', undefined]
   )).toBe('app dark')
 })
@@ -32,7 +31,7 @@ test('with undefined', () => {
 test('all', () => {
   expect(classNames(
     'app',
-    { 'hovered': true, 'selected': true },
+    { hovered: true, selected: true },
     ['dark', 'size']
   )).toBe('app dark size hovered selected')
 })

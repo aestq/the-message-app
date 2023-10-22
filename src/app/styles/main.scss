@@ -1,0 +1,12 @@
+@import "./themes/light";
+@import "./themes/dark";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  background-color: var(--bg-color);
+}

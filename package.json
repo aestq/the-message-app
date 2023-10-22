@@ -11,7 +11,8 @@
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
-    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix"
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -37,6 +38,7 @@
     "stylelint-config-standard-scss": "^11.0.0",
     "typescript": "^5.2.2",
     "vite": "^4.4.5",
-    "vitest": "^0.34.6"
+    "vitest": "^0.34.6",
+    "husky": "^8.0.0"
   }
 }

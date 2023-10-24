@@ -6,7 +6,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
+    port: 7000,
     open: true
   },
   build: {
@@ -18,5 +18,8 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src')
     }
   },
-  test: {}
+  test: {
+    globals: true,
+    environment: 'jsdom'
+  }
 })

@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { App } from '@/app/App'
 import { ThemeProvider } from '@/app/providers/ThemeProvider'
 import '@/app/styles/main.scss'
+import './shared/config/i18n'
 
 const rootContainer = document.getElementById('root')
 

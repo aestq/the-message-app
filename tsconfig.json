@@ -21,6 +21,9 @@
     },
     "types": ["vite/client", "vitest/globals", "vite-plugin-svgr/client"]
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "./config/storybook/*.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

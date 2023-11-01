@@ -1,4 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta } from '@storybook/react'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/shared/lib'
 import { Button } from './Button'
 
 const meta: Meta<typeof Button> = {
@@ -7,53 +9,64 @@ const meta: Meta<typeof Button> = {
 }
 
 export default meta
-type Story = StoryObj<typeof Button>
+type Story = Meta<typeof Button>
 
 export const Clear: Story = {
-  render: () => (
-    <Button>
-      Button
-    </Button>
-  )
+  component: Button,
+  args: {
+    children: 'button'
+  }
 }
 
 export const Primary: Story = {
-  render: () => (
-    <Button theme='primary'>
-      Button
-    </Button>
-  )
+  component: Button,
+  args: {
+    theme: 'primary',
+    children: 'button'
+  }
+}
+
+export const Primary_dark: Story = {
+  component: Button,
+  args: {
+    theme: 'primary',
+    children: 'button'
+  },
+  decorators: [ThemeDecorator(Theme.DARK)]
 }
 
 export const S_size: Story = {
-  render: () => (
-    <Button theme='primary' size='s'>
-      Button
-    </Button>
-  )
+  component: Button,
+  args: {
+    theme: 'primary',
+    children: 'button',
+    size: 's'
+  }
 }
 
 export const M_size: Story = {
-  render: () => (
-    <Button theme='primary' size='m'>
-      Button
-    </Button>
-  )
+  component: Button,
+  args: {
+    theme: 'primary',
+    children: 'button',
+    size: 'm'
+  }
 }
 
 export const L_size: Story = {
-  render: () => (
-    <Button theme='primary' size='l'>
-      Button
-    </Button>
-  )
+  component: Button,
+  args: {
+    theme: 'primary',
+    children: 'button',
+    size: 'l'
+  }
 }
 
 export const Max: Story = {
-
-  render: () => (
-    <Button theme='primary' max>
-      Button
-    </Button>
-  )
+  component: Button,
+  args: {
+    theme: 'primary',
+    children: 'button',
+    max: true
+  }
 }

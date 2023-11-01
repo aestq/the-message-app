@@ -6,7 +6,7 @@ export const PrivateRoute = () => {
   const location = useLocation()
 
   if(!authData) {
-    return <Navigate to={RoutesPath.SUPPORT} state={{ location }} />
+    return <Navigate to={RoutesPath.ENTRY} state={{ location }} />
   }
 
   return (

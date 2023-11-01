@@ -2,12 +2,17 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--secondary-color)
+  color: var(--secondary-color);
 }
 
 .primary {
   background-color: var(--primary-color);
-  color: var(--bg-color);
+  color: var(--button-color);
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--button-hover-color);
+  }
 }
 
 .clear {

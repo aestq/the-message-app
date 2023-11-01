@@ -1,5 +1,5 @@
-import path from 'path'
 import type { StorybookConfig } from '@storybook/react-vite'
+import { buildViteConfig } from './vite.config'
 
 const config: StorybookConfig = {
   stories: ['../../src/**/*.stories.@(ts|tsx)'],
@@ -9,7 +9,8 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
-    'storybook-react-i18next'
+    'storybook-react-i18next',
+    'storybook-addon-themes'
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -19,15 +20,7 @@ const config: StorybookConfig = {
     autodocs: 'tag'
   },
   async viteFinal (config) {
-    // eslint-disable-next-line
-    config.resolve!.alias = {
-      '@': path.resolve(__dirname, '..', '..', 'src')
-    }
-    config.define = {
-      'process.env': {},
-      __IS_DEV__: true
-    }
-    return config
+    return buildViteConfig(config)
   }
 }
 export default config

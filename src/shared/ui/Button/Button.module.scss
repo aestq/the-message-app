@@ -1,0 +1,33 @@
+.Button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.max {
+  width: 100%;
+}
+
+.s {
+  padding: 4px 10px;
+  font-size: var(--font-size-xs);
+  border-radius: 5px;
+}
+
+.m {
+  padding: 6px 12px;
+  font-size: var(--font-size-s);
+  border-radius: 7px;
+}
+
+.l {
+  padding: 8px 14px;
+  font-size: var(--font-size-m);
+  border-radius: 10px;
+}
+

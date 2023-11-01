@@ -1,6 +1,7 @@
 @import "./themes/light";
 @import "./themes/dark";
 @import "fonts";
+@import "global-vars";
 
 * {
   margin: 0;
@@ -8,6 +9,16 @@
   box-sizing: border-box;
 }
 
-body {
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  font: inherit;
+}
+
+.app {
   background-color: var(--bg-color);
+  font-family: var(--font-family-main);
+  height: 100vh;
 }

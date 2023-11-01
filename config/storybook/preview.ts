@@ -1,10 +1,10 @@
 import type { Preview } from '@storybook/react'
+import { Theme } from '@/shared/lib'
 import i18nForTests from '../../src/shared/config/i18n/i18nForTests'
 import { I18nDecorator } from '../../src/shared/config/storybook/I18nDecorator'
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator'
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator'
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator'
-import { Theme } from '../../src/shared/lib'
 
 const preview: Preview = {
   parameters: {
@@ -29,8 +29,8 @@ const preview: Preview = {
   decorators: [
     StyleDecorator,
     RouterDecorator,
-    ThemeDecorator(Theme.LIGHT),
-    I18nDecorator
+    I18nDecorator,
+    ThemeDecorator(Theme.LIGHT)
   ]
 }
 

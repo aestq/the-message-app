@@ -14,7 +14,6 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 test('check default value', () => {
   const { result } = renderHook(() => useTheme(), { wrapper: Wrapper })
   expect(result.current.theme).toBe(Theme.LIGHT)
-  expect(document.body.className).toBe(Theme.LIGHT)
   expect(localStorage.getItem(LOCAL_STORAGE_THEME_KEY)).toBe(null)
 })
 
@@ -25,13 +24,11 @@ test('toggle theme', () => {
     result.current.toggleTheme()
   })
   expect(result.current.theme).toBe(Theme.DARK)
-  expect(document.body.className).toBe(Theme.DARK)
   expect(localStorage.getItem(LOCAL_STORAGE_THEME_KEY)).toBe(Theme.DARK)
 
   act(() => {
     result.current.toggleTheme()
   })
   expect(result.current.theme).toBe(Theme.LIGHT)
-  expect(document.body.className).toBe(Theme.LIGHT)
   expect(localStorage.getItem(LOCAL_STORAGE_THEME_KEY)).toBe(Theme.LIGHT)
 })

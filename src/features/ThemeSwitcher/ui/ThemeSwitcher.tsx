@@ -1,9 +1,14 @@
 import MoonIcon from '@/shared/assets/icons/moon-icon.svg'
 import SunIcon from '@/shared/assets/icons/sun-icon.svg'
 import { Theme, useTheme } from '@/shared/lib'
-import { Button } from '@/shared/ui'
+import { Button, HStack } from '@/shared/ui'
 
-export const ThemeSwitcher = () => {
+interface ThemeSwitcherProps {
+  className?: string
+}
+
+export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
+  const { className } = props
   const { theme, toggleTheme } = useTheme()
 
   const toggle = () => {
@@ -11,8 +16,10 @@ export const ThemeSwitcher = () => {
   }
 
   return (
-    <Button onClick={toggle}>
-      {theme === Theme.LIGHT ? <MoonIcon /> : <SunIcon />}
+    <Button className={className} onClick={toggle}>
+      <HStack align='center' justify='center'>
+        {theme === Theme.LIGHT ? <MoonIcon /> : <SunIcon />}
+      </HStack>
     </Button>
   )
 }

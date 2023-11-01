@@ -1,7 +1,9 @@
 import { memo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
+import { RoutesPath } from '@/shared/consts'
 import { classNames } from '@/shared/lib'
-import { HStack, Logo } from '@/shared/ui'
+import { Button, HStack, Logo, Text } from '@/shared/ui'
 import cls from './Navbar.module.scss'
 
 interface NavbarProps {
@@ -10,6 +12,11 @@ interface NavbarProps {
 
 export const Navbar = memo((props: NavbarProps) => {
   const { className } = props
+  const navigate = useNavigate()
+
+  const onClickToSupport = () => {
+    navigate(RoutesPath.SUPPORT)
+  }
 
   return (
     <HStack
@@ -18,8 +25,25 @@ export const Navbar = memo((props: NavbarProps) => {
       justify='between'
       align='center'
     >
-      <Logo />
-      <ThemeSwitcher />
+      <HStack align='center' gap='16'>
+        <Logo />
+        <Text
+          className={cls.title}
+          title
+          size='l'
+        >
+          The Message
+        </Text>
+      </HStack>
+      <HStack align='center' gap='16'>
+        <Button
+          onClick={onClickToSupport}
+          role='link'
+        >
+          Поддержка
+        </Button>
+        <ThemeSwitcher />
+      </HStack>
     </HStack>
   )
 })

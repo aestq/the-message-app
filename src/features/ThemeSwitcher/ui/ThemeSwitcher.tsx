@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import MoonIcon from '@/shared/assets/icons/moon-icon.svg'
 import SunIcon from '@/shared/assets/icons/sun-icon.svg'
 import { Theme, useTheme } from '@/shared/lib'
@@ -7,7 +8,7 @@ interface ThemeSwitcherProps {
   className?: string
 }
 
-export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
+export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
   const { className } = props
   const { theme, toggleTheme } = useTheme()
 
@@ -22,4 +23,6 @@ export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
       </HStack>
     </Button>
   )
-}
+})
+
+ThemeSwitcher.displayName = 'ThemeSwitcher'

@@ -1,21 +1,21 @@
 import type { Meta } from '@storybook/react'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/lib'
-import { EntryPage } from './EntryPage'
+import { LangSwitcher } from './LangSwitcher'
 
-const meta: Meta<typeof EntryPage> = {
-  title: 'pages/EntryPage',
-  component: EntryPage
+const meta: Meta<typeof LangSwitcher> = {
+  title: 'features/LangSwitcher',
+  component: LangSwitcher
 }
-
 export default meta
-type Story = Meta<typeof EntryPage>
+
+type Story = Meta<typeof LangSwitcher>
 
 export const Light: Story = {
-  component: EntryPage
+  component: LangSwitcher
 }
 
 export const Dark: Story = {
-  component: EntryPage,
+  component: LangSwitcher,
   decorators: [ThemeDecorator(Theme.DARK)]
 }

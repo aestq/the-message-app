@@ -1,14 +1,19 @@
-import { type FormEvent, memo, useState } from 'react'
+import { useStore, useEvent } from 'effector-react'
+import { type FormEvent, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button, HStack, Input, Logo, Text, VStack } from '@/shared/ui'
+import { authModel } from '../../model'
 import cls from './EmailForm.module.scss'
 
 export const EmailForm = memo(() => {
   const { t } = useTranslation()
-  const [value, setValue] = useState('')
+  const email = useStore(authModel.$email)
+  const setEmail = useEvent(authModel.setEmail)
+  const setStep = useEvent(authModel.setStep)
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault()
+    setStep('code')
   }
 
   return (
@@ -26,8 +31,8 @@ export const EmailForm = memo(() => {
         >
           <Input
             className={cls.input}
-            value={value}
-            onChange={setValue}
+            value={email}
+            onChange={setEmail}
             placeholder={t('Введите email')}
           />
           <Button

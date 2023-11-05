@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { RoutesPath } from '@/shared/consts'
 import { classNames } from '@/shared/lib'
-import { Button, HStack, Logo, Text } from '@/shared/ui'
+import { Button, HStack } from '@/shared/ui'
 import cls from './Navbar.module.scss'
 
 interface NavbarProps {
@@ -22,28 +22,16 @@ export const Navbar = memo((props: NavbarProps) => {
     <HStack
       className={classNames(cls.Navbar, {}, [className])}
       as='header'
-      justify='between'
+      justify='end'
       align='center'
     >
-      <HStack align='center' gap='16'>
-        <Logo />
-        <Text
-          className={cls.title}
-          title
-          size='l'
-        >
-          The Message
-        </Text>
-      </HStack>
-      <HStack align='center' gap='16'>
-        <Button
-          onClick={onClickToSupport}
-          role='link'
-        >
-          Поддержка
-        </Button>
-        <ThemeSwitcher />
-      </HStack>
+      <Button
+        onClick={onClickToSupport}
+        role='link'
+      >
+        Поддержка
+      </Button>
+      <ThemeSwitcher />
     </HStack>
   )
 })

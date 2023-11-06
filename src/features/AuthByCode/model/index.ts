@@ -1,36 +1,47 @@
-import { createEvent, createStore, type Event, type Store } from 'effector'
+import { createEffect, createEvent, createStore, forward, sample } from 'effector'
+import { createForm } from 'effector-forms'
 import { atom } from '@/shared/lib'
+import { regexpEmail } from './consts/regexp'
+import { sendEmail } from './services/sendEmail'
 
 type Step = 'email' | 'code'
 
-interface AuthModelSchema {
-  $email: Store<string>
-  $code: Store<string>
-  $step: Store<Step>
-  setEmail: Event<string>
-  setCode: Event<string>
-  setStep: Event<Step>
-}
+export const authModel = atom(() => {
+  const emailForm = createForm({
+    fields: {
+      email: {
+        init: '',
+        rules: [
+          {
+            name: 'email',
+            validator: (value: string) => regexpEmail.test(value)
+          }
+        ]
+      }
+    },
+    validateOn: ['submit']
+  })
 
-export const authModel = atom<AuthModelSchema>(() => {
-  const $email = createStore('')
-  const $code = createStore('')
+  const codeStep = createEvent<Step>()
   const $step = createStore<Step>('email')
+  $step.on(codeStep, () => 'code')
 
-  const setEmail = createEvent<string>()
-  const setCode = createEvent<string>()
-  const setStep = createEvent<Step>()
+  const sendEmailFx = createEffect(sendEmail)
 
-  $email.on(setEmail, (_, payload) => payload)
-  $code.on(setCode, (_, payload) => payload)
-  $step.on(setStep, (_, payload) => payload)
+  forward({
+    from: emailForm.formValidated,
+    to: sendEmailFx
+  })
+
+  sample({
+    clock: sendEmailFx.done,
+    source: $step,
+    target: codeStep
+  })
 
   return {
-    $email,
-    $code,
-    $step,
-    setEmail,
-    setCode,
-    setStep
+    emailForm,
+    sendEmailFx,
+    $step
   }
 })

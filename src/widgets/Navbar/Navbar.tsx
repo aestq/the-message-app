@@ -1,4 +1,5 @@
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { RoutesPath } from '@/shared/consts'
@@ -13,6 +14,7 @@ interface NavbarProps {
 export const Navbar = memo((props: NavbarProps) => {
   const { className } = props
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const onClickToSupport = () => {
     navigate(RoutesPath.SUPPORT)
@@ -29,7 +31,7 @@ export const Navbar = memo((props: NavbarProps) => {
         onClick={onClickToSupport}
         role='link'
       >
-        Поддержка
+        {t('Поддержка')}
       </Button>
       <ThemeSwitcher />
     </HStack>

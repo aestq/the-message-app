@@ -1,49 +1,69 @@
-import { useStore, useEvent } from 'effector-react'
-import { type FormEvent, memo } from 'react'
+import { useForm } from 'effector-forms'
+import { type FormEvent, memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button, HStack, Input, Logo, Text, VStack } from '@/shared/ui'
+import { Button, HStack, Input, Logo, Text, Transition, VStack } from '@/shared/ui'
 import { authModel } from '../../model'
 import cls from './EmailForm.module.scss'
 
 export const EmailForm = memo(() => {
-  const { t } = useTranslation()
-  const email = useStore(authModel.$email)
-  const setEmail = useEvent(authModel.setEmail)
-  const setStep = useEvent(authModel.setStep)
+  const { t, i18n } = useTranslation()
+  const { fields, submit } = useForm(authModel.emailForm)
+  const [isShow] = useState(false)
+
+  const changeLang = () => {
+    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+  }
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault()
-    setStep('code')
+    submit()
   }
 
   return (
-    <VStack gap='32' align='center'>
-      <HStack align='center' justify='center' gap='16'>
-        <Logo />
-        <Text className={cls.title} size='l' title>
-          The Message
-        </Text>
-      </HStack>
-      <form onSubmit={onSubmit}>
-        <VStack
-          className={cls.EmailForm}
-          gap='8'
-        >
-          <Input
-            className={cls.input}
-            value={email}
-            onChange={setEmail}
-            placeholder={t('Введите email')}
-          />
-          <Button
-            theme='primary'
-            max
+    <Transition
+      timeout={500}
+      animation='out'
+      isShow={isShow}
+    >
+      <VStack
+        gap='32'
+        align='center'
+      >
+        <HStack align='center' justify='center' gap='16'>
+          <Logo />
+          <Text className={cls.title} size='l' title>
+            The Message
+          </Text>
+        </HStack>
+        <form onSubmit={onSubmit}>
+          <VStack
+            className={cls.EmailForm}
+            gap='8'
           >
-            {t('Получить код')}
-          </Button>
-        </VStack>
-      </form>
-    </VStack>
+            <Input
+              className={cls.input}
+              value={fields.email?.value}
+              onChange={fields.email?.onChange}
+              placeholder={t('Введите email')}
+            />
+            {fields.email?.errorText({ email: 'Некорректная почта' })}
+            <Button
+              theme='primary'
+              max
+            >
+              {t('Получить код')}
+            </Button>
+          </VStack>
+        </form>
+        <Button
+          className={cls.lang}
+          max
+          onClick={changeLang}
+        >
+          {t('Продолжить на')}
+        </Button>
+      </VStack>
+    </Transition>
   )
 })
 

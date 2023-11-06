@@ -8,7 +8,7 @@ export const CodeFrom = memo(() => {
   const [value, setValue] = useState('')
 
   return (
-    <form>
+    <form className={cls.show}>
       <Input
         className={cls.input}
         value={value}

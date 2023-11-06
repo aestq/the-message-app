@@ -1,0 +1,23 @@
+.Transition {
+  transition: opacity var(--timeout), transform var(--timeout);
+}
+
+.in {
+  transform: translate(var(--from-x), var(--from-y));
+  opacity: 0;
+
+  &.mounted {
+    transform: translate(var(--to-x), var(--to-y));
+    opacity: 1;
+  }
+}
+
+.out {
+  transform: translate(var(--from-x), var(--from-y));
+  opacity: 1;
+
+  &.mounted {
+    transform: translate(var(--to-x), var(--to-y));
+    opacity: 0;
+  }
+}

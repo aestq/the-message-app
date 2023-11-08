@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator.tsx'
 import { Theme } from '@/shared/lib'
-import { Navbar } from './Navbar'
+import { Navbar } from './Navbar.tsx'
 
 const meta: Meta<typeof Navbar> = {
   title: 'widgets/Navbar',

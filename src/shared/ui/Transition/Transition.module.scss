@@ -2,6 +2,10 @@
   transition: opacity var(--timeout), transform var(--timeout);
 }
 
+.max {
+  width: 100%;
+}
+
 .in {
   transform: translate(var(--from-x), var(--from-y));
   opacity: 0;

@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Navbar } from '@/widgets'
+import { Navbar } from '@/widgets/Navbar'
 import { AuthForm } from '@/features/AuthByCode'
 import { HStack } from '@/shared/ui'
 import cls from './EntryPage.module.scss'

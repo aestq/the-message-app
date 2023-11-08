@@ -14,7 +14,8 @@ export const authModel = atom(() => {
         rules: [
           {
             name: 'email',
-            validator: (value: string) => regexpEmail.test(value)
+            validator: (value: string) => regexpEmail.test(value),
+            errorText: 'Некорректная почта'
           }
         ]
       }

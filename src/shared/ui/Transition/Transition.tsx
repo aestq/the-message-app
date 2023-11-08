@@ -6,13 +6,14 @@ interface TransitionProps {
   className?: string
   children: ReactNode
   isShow?: boolean
-  fromX?: number
-  fromY?: number
-  toX?: number
-  toY?: number
+  fromX?: number | string
+  fromY?: number | string
+  toX?: number | string
+  toY?: number | string
   delay?: number
   timeout: number
   animation?: 'in' | 'out'
+  max?: boolean
 }
 
 export const Transition = (props: TransitionProps) => {
@@ -26,6 +27,7 @@ export const Transition = (props: TransitionProps) => {
     delay = 0,
     timeout,
     isShow = true,
+    max,
     animation = 'in'
   } = props
   const [mounted, setMounted] = useState(false)
@@ -33,8 +35,8 @@ export const Transition = (props: TransitionProps) => {
   const styles = useMemo(() => ({
     '--from-x': `${fromX}px`,
     '--from-y': `${fromY}px`,
-    '--to-x': `${toX}px`,
-    '--to-y': `${toY}px`,
+    '--to-x': `${toX ?? 0}px`,
+    '--to-y': `${toY ?? 0}px`,
     '--timeout': `${timeout}ms`
   }), [fromX, fromY, toX, toY, timeout])
 
@@ -44,7 +46,8 @@ export const Transition = (props: TransitionProps) => {
   ]
 
   const mods: Mods = {
-    [cls.mounted]: mounted
+    [cls.mounted]: mounted,
+    [cls.max]: max
   }
 
   useEffect(() => {

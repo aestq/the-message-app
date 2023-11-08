@@ -16,7 +16,6 @@
     transform: translate(-10px, -8px) scale(0.8);
     background: var(--bg-color);
     padding: 0 7px;
-    color: var(--placeholder-color);
   }
 }
 
@@ -24,7 +23,6 @@
   transform: translate(-10px, -8px) scale(0.8);
   background: var(--bg-color);
   padding: 0 7px;
-  color: var(--placeholder-color);
 }
 
 .input {
@@ -43,6 +41,18 @@
   }
 
   &:focus {
+    border-color: transparent;
     box-shadow: 0 0 0 2px var(--primary-color);
+  }
+}
+
+.error {
+  .container:focus-within .label {
+    color: var(--error-color);
+  }
+
+  .input {
+    box-shadow: 0 0 0 1px var(--error-color);
+    border-color: var(--error-color);
   }
 }

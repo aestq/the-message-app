@@ -17,3 +17,31 @@
 .xl {
   font-size: var(--font-size-xl);
 }
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--secondary-color);
+}
+
+.error {
+  color: var(--error-color);
+}
+
+.clear {
+  color: var(--placeholder-color);
+}

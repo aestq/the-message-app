@@ -1,21 +1,21 @@
 import type { Meta } from '@storybook/react'
 import { ThemeDecorator } from '@/shared/config'
 import { Theme } from '@/shared/lib'
-import { Logo } from './Logo'
+import { EmailForm } from './EmailForm'
 
-const meta: Meta<typeof Logo> = {
-  title: 'shared/Logo',
-  component: Logo
+const meta: Meta<typeof EmailForm> = {
+  title: 'features/AuthByCode/EmailForm',
+  component: EmailForm
 }
 
 export default meta
-type Story = Meta<typeof Logo>
+type Story = Meta<typeof EmailForm>
 
 export const Light: Story = {
-  component: Logo
+  component: EmailForm
 }
 
 export const Dark: Story = {
-  component: Logo,
+  component: EmailForm,
   decorators: [ThemeDecorator(Theme.DARK)]
 }

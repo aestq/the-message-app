@@ -9,7 +9,8 @@ export const EntryPage = memo(() => {
     <>
       <Navbar />
       <HStack
-        className={cls.main} as='main'
+        className={cls.main}
+        as='main'
         justify='center'
         align='center'
       >

@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { ThemeDecorator } from '@/shared/config'
 import { Theme } from '@/shared/lib'
 import { Button } from './Button'
 

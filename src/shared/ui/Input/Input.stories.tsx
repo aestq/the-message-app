@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { ThemeDecorator, PaddingDecorator } from '@/shared/config'
 import { Theme } from '@/shared/lib'
 import { Input } from './Input'
 
@@ -23,5 +23,17 @@ export const Dark: Story = {
   args: {
     placeholder: 'Введите email'
   },
-  decorators: [ThemeDecorator(Theme.DARK)]
+  decorators: [PaddingDecorator(30), ThemeDecorator(Theme.DARK)]
+}
+
+export const With_Validate_Error: Story = {
+  component: Input,
+  args: {
+    placeholder: 'Введите email',
+    validateError: 'Ошибка'
+  }
+}
+
+export const Not_Placeholder: Story = {
+  component: Input
 }

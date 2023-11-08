@@ -10,23 +10,3 @@
 .lang {
   color: var(--primary-color);
 }
-
-.title {
-  font-family: var(--font-family-secondary);
-}
-
-.show {
-  animation: show-leave 300ms ease-in forwards;
-}
-
-@keyframes show-leave {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-}

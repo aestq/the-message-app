@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { ThemeDecorator } from '@/shared/config'
 import { Theme } from '@/shared/lib'
 import { Text } from './Text'
 
@@ -71,5 +71,59 @@ export const Size_xl: Story = {
   args: {
     size: 'xl',
     children: 'Text lorem'
+  }
+}
+
+export const Align_center: Story = {
+  component: Text,
+  args: {
+    size: 'xl',
+    children: 'Text lorem',
+    align: 'center'
+  }
+}
+
+export const Align_right: Story = {
+  component: Text,
+  args: {
+    size: 'xl',
+    children: 'Text lorem',
+    align: 'right'
+  }
+}
+
+export const Primary: Story = {
+  component: Text,
+  args: {
+    size: 'l',
+    children: 'Text lorem',
+    theme: 'primary'
+  }
+}
+
+export const Secondary: Story = {
+  component: Text,
+  args: {
+    size: 'l',
+    children: 'Text lorem',
+    theme: 'secondary'
+  }
+}
+
+export const Error: Story = {
+  component: Text,
+  args: {
+    size: 'l',
+    children: 'Text lorem',
+    theme: 'error'
+  }
+}
+
+export const Clear: Story = {
+  component: Text,
+  args: {
+    size: 'l',
+    children: 'Text lorem',
+    theme: 'clear'
   }
 }

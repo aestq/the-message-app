@@ -4,6 +4,8 @@ import cls from './Text.module.scss'
 
 type HeaderTagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
 type TextSize = 'xs' | 's' | 'm' | 'l' | 'xl'
+type TextAlign = 'left' | 'right' | 'center'
+type TextTheme = 'secondary' | 'primary' | 'error' | 'clear'
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
   xs: 'h5',
@@ -18,6 +20,8 @@ interface TextProps {
   children: string
   title?: boolean
   size?: TextSize
+  align?: TextAlign
+  theme?: TextTheme
 }
 
 export const Text = memo((props: TextProps) => {
@@ -25,14 +29,18 @@ export const Text = memo((props: TextProps) => {
     className,
     children,
     title,
-    size = 'm'
+    size = 'm',
+    align = 'left',
+    theme = 'secondary'
   } = props
 
   const HeaderTag = mapSizeToHeaderTag[size]
 
   const additional: Additional = [
     className,
-    cls[size]
+    cls[size],
+    cls[align],
+    cls[theme]
   ]
 
   if(title) {

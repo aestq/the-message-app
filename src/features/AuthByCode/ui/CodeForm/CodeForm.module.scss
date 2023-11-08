@@ -3,18 +3,10 @@
   flex-grow: 1;
 }
 
-.show {
-  animation: show-enter 300ms forwards;
+.CodeForm {
+  width: 250px;
 }
 
-@keyframes show-enter {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.text {
+  margin-top: 10px;
 }

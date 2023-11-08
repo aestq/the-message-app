@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { RoutesPath } from '@/shared/consts'
 import { classNames } from '@/shared/lib'
-import { Button, HStack, Transition } from '@/shared/ui'
-import { Delays, Timeouts } from '../config'
+import { Button, HStack } from '@/shared/ui'
 import cls from './Navbar.module.scss'
 
 interface NavbarProps {
@@ -28,25 +27,13 @@ export const Navbar = memo((props: NavbarProps) => {
       justify='end'
       align='center'
     >
-      <Transition
-        timeout={Timeouts.SUPPORT}
-        delay={Delays.SUPPORT}
-        fromX={100}
+      <Button
+        onClick={onClickToSupport}
+        role='link'
       >
-        <Button
-          onClick={onClickToSupport}
-          role='link'
-        >
-          {t('Поддержка')}
-        </Button>
-      </Transition>
-      <Transition
-        timeout={Timeouts.THEME_SWITCHER}
-        delay={Delays.THEME_SWITCHER}
-        fromX={100}
-      >
-        <ThemeSwitcher />
-      </Transition>
+        {t('Поддержка')}
+      </Button>
+      <ThemeSwitcher />
     </HStack>
   )
 })

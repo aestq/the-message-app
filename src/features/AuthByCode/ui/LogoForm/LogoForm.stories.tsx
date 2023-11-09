@@ -1,21 +1,21 @@
 import type { Meta } from '@storybook/react'
 import { ThemeDecorator } from '@/shared/config'
 import { Theme } from '@/shared/lib'
-import { Navbar } from './Navbar'
+import { LogoForm } from './LogoForm'
 
-const meta: Meta<typeof Navbar> = {
-  title: 'widgets/Navbar',
-  component: Navbar
+const meta: Meta<typeof LogoForm> = {
+  title: 'features/AuthByCode/LogoForm',
+  component: LogoForm
 }
 
 export default meta
-type Story = Meta<typeof Navbar>
+type Story = Meta<typeof LogoForm>
 
 export const Light: Story = {
-  component: Navbar
+  component: LogoForm
 }
 
 export const Dark: Story = {
-  component: Navbar,
+  component: LogoForm,
   decorators: [ThemeDecorator(Theme.DARK)]
 }

@@ -6,6 +6,7 @@ import { Input, Text, Transition } from '@/shared/ui'
 import { Timeouts } from '../../config'
 import { codeForm } from '../../lib'
 import { authModel } from '../../model'
+import { Messages } from '../Messages/Messages'
 import cls from './CodeForm.module.scss'
 
 export const CodeFrom = memo(() => {
@@ -32,8 +33,10 @@ export const CodeFrom = memo(() => {
     <Transition
       timeout={Timeouts.CODE_FORM}
       fromX={100}
+      className={cls.CodeForm}
     >
-      <form className={cls.CodeForm}>
+      <Messages />
+      <form>
         <Input
           className={cls.input}
           value={value}

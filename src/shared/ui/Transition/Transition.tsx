@@ -6,10 +6,10 @@ interface TransitionProps {
   className?: string
   children: ReactNode
   isShow?: boolean
-  fromX?: number | string
-  fromY?: number | string
-  toX?: number | string
-  toY?: number | string
+  fromX?: number
+  fromY?: number
+  toX?: number
+  toY?: number
   delay?: number
   timeout: number
   animation?: 'in' | 'out'

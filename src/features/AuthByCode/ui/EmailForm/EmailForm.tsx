@@ -28,13 +28,14 @@ export const EmailForm = memo(() => {
         align='center'
       >
         <LogoForm />
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} noValidate>
             <VStack
               className={cls.EmailForm}
               gap='8'
             >
               <Input
                 className={cls.input}
+                type='email'
                 value={fields.email?.value}
                 onChange={fields.email?.onChange}
                 placeholder={t('Введите email')}

@@ -6,5 +6,7 @@
   "Введите код": "Enter the code",
   "Продолжить на": "Продолжить на Русском",
   "Некорректная почта": "Incorrect email",
-  "Код состоит из 6 цифр": "The code consists of 6 digits"
+  "Код состоит из 6 цифр": "The code consists of 6 digits",
+  "Привет!": "Hello!",
+  "Как дела?": "What's up?"
 }

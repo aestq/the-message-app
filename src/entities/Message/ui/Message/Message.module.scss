@@ -1,0 +1,13 @@
+.Message {
+  padding: 7px 15px;
+  border-radius: 7px;
+  position: relative;
+  color: var(--secondary-color);
+  background-color: var(--message-bg-color);
+}
+
+.me {
+  background-color: var(--primary-color);
+  color: var(--inverted-secondary-color);
+  margin-right: -1%;
+}

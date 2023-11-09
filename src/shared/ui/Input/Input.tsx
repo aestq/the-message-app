@@ -3,7 +3,7 @@ import { classNames, type Mods } from '@/shared/lib'
 import { VStack } from '@/shared/ui'
 import cls from './Input.module.scss'
 
-type OmitHTMLProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'type'>
+type OmitHTMLProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
 interface InputProps extends OmitHTMLProps {
   className?: string
@@ -40,7 +40,6 @@ export const Input = memo((props: InputProps) => {
         onChange={onChangeHandler}
         value={value}
         className={cls.input}
-        type='text'
         {...otherProps}
       />
       {placeholder && (

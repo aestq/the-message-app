@@ -1,21 +1,21 @@
 import type { Meta } from '@storybook/react'
 import { ThemeDecorator } from '@/shared/config'
 import { Theme } from '@/shared/lib'
-import { Navbar } from './Navbar'
+import { Messages } from './Messages'
 
-const meta: Meta<typeof Navbar> = {
-  title: 'widgets/Navbar',
-  component: Navbar
+const meta: Meta<typeof Messages> = {
+  title: 'features/AuthByCode/Messages',
+  component: Messages
 }
 
 export default meta
-type Story = Meta<typeof Navbar>
+type Story = Meta<typeof Messages>
 
 export const Light: Story = {
-  component: Navbar
+  component: Messages
 }
 
 export const Dark: Story = {
-  component: Navbar,
+  component: Messages,
   decorators: [ThemeDecorator(Theme.DARK)]
 }

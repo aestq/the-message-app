@@ -19,7 +19,10 @@ select {
 
 .app {
   background-color: var(--bg-color);
-  font-family: var(--font-family-main);
   min-height: 100vh;
-  color: var(--secondary-color)
+}
+
+body {
+  color: var(--secondary-color);
+  font-family: var(--font-family-main);
 }

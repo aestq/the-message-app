@@ -8,5 +8,7 @@
   "Некорректная почта": "Incorrect email",
   "Код состоит из 6 цифр": "The code consists of 6 digits",
   "Привет!": "Hello!",
-  "Как дела?": "What's up?"
+  "Как дела?": "What's up?",
+  "Нажмите чтобы перегрузить страницу": "Click to reload the page",
+  "Произошла ошибка": "There was an error"
 }

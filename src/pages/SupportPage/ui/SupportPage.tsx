@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LangSwitcher } from '@/features/LangSwitcher'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
-import { HStack, Text } from '@/shared/ui'
+import { HStack, VStack, Text } from '@/shared/ui'
 import cls from './SupportPage.module.scss'
 
 export const SupportPage = memo(() => {
@@ -11,6 +11,7 @@ export const SupportPage = memo(() => {
   return (
     <div className={cls.SupportPage}>
       <HStack
+        className={cls.header}
         as='header'
         justify='between'
         align='center'
@@ -23,16 +24,22 @@ export const SupportPage = memo(() => {
           <ThemeSwitcher />
         </HStack>
       </HStack>
-      <HStack
+      <VStack
         className={cls.main}
         as='main'
         justify='center'
         align='center'
       >
-        <Text>
-          {t('Если у вас возникла проблема')}
+        <Text align='center'>
+          {t('Почта поддержи')}
         </Text>
-      </HStack>
+        <Text align='center'>
+          the-message@email.com
+        </Text>
+        <Text align='center' theme='clear' size='s'>
+          {t('Страница в процессе разработки')}
+        </Text>
+      </VStack>
     </div>
   )
 })

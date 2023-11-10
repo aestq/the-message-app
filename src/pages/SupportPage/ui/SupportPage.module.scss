@@ -1,6 +1,15 @@
 .SupportPage {
+  height: 100vh;
+}
+
+.header {
   padding: 5vh 7vw;
-  height: 100%;
+
+  @media (width <= 430px) {
+    & {
+      padding: 2.5vh 7vw;
+    }
+  }
 }
 
 .main {

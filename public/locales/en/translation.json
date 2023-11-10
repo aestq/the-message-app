@@ -1,6 +1,6 @@
 {
   "Поддержка": "Support",
-  "Если у вас возникла проблема": "If you have a problem, write to the mail themessage@email.com",
+  "Почта поддержи": "Support Email",
   "Введите email": "Enter email",
   "Получить код": "Get the code",
   "Введите код": "Enter the code",
@@ -10,5 +10,6 @@
   "Привет!": "Hello!",
   "Как дела?": "What's up?",
   "Нажмите чтобы перегрузить страницу": "Click to reload the page",
-  "Произошла ошибка": "There was an error"
+  "Произошла ошибка": "There was an error",
+  "Страница в процессе разработки": "Page in progress"
 }

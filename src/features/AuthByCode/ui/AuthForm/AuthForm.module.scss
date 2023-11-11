@@ -1,0 +1,7 @@
+.AuthForm {
+  min-width: 250px;
+  
+  @media (width <= 430px) {
+    min-width: 70vw;
+  }
+}

@@ -3,15 +3,13 @@ import { atom } from '@/shared/lib'
 import { codeForm, emailForm } from '../lib'
 import { sendCode } from './services/sendCode'
 import { sendEmail } from './services/sendEmail'
-import { type AuthStore, type State } from './types'
+import { type AuthStore } from './types'
 
 export const authModel = atom<AuthStore>(() => {
-  const $state = createStore<State>('email')
-  const codeState = createEvent<State>()
-  const authSuccess = createEvent<State>()
+  const $isEmailForm = createStore<boolean>(true)
+  const codeFormSwitch = createEvent<boolean>()
 
-  $state.on(codeState, () => 'code')
-  $state.on(authSuccess, () => 'auth-success')
+  $isEmailForm.on(codeFormSwitch, () => false)
 
   const sendEmailFx = createEffect(sendEmail)
   const sendCodeFx = createEffect(sendCode)
@@ -23,8 +21,8 @@ export const authModel = atom<AuthStore>(() => {
 
   sample({
     clock: sendEmailFx.done,
-    source: $state,
-    target: codeState
+    source: $isEmailForm,
+    target: codeFormSwitch
   })
 
   sample({
@@ -32,15 +30,9 @@ export const authModel = atom<AuthStore>(() => {
     target: sendCodeFx
   })
 
-  sample({
-    clock: sendCodeFx.done,
-    source: $state,
-    target: authSuccess
-  })
-
   return {
     sendEmailFx,
     sendCodeFx,
-    $state
+    $isEmailForm
   }
 })

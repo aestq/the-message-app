@@ -4,12 +4,6 @@
 
 .header {
   padding: 5vh 7vw;
-
-  @media (width <= 430px) {
-    & {
-      padding: 2.5vh 7vw;
-    }
-  }
 }
 
 .main {

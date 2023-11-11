@@ -28,29 +28,32 @@ export const EmailForm = memo(() => {
         align='center'
       >
         <LogoForm />
-          <form onSubmit={onSubmit} noValidate>
-            <VStack
-              className={cls.EmailForm}
-              gap='8'
+        <form
+          className={cls.form}
+          onSubmit={onSubmit}
+          noValidate
+        >
+          <VStack
+            gap='8'
+          >
+            <Input
+              className={cls.input}
+              type='email'
+              value={fields.email?.value}
+              onChange={fields.email?.onChange}
+              placeholder={t('Введите email')}
+              validateError={t(fields.email?.errorText())}
+              disabled={isLoading}
+            />
+            <Button
+              theme='primary'
+              max
+              disabled={isLoading}
             >
-              <Input
-                className={cls.input}
-                type='email'
-                value={fields.email?.value}
-                onChange={fields.email?.onChange}
-                placeholder={t('Введите email')}
-                validateError={t(fields.email?.errorText())}
-                disabled={isLoading}
-              />
-              <Button
-                theme='primary'
-                max
-                disabled={isLoading}
-              >
-                {t('Получить код')}
-              </Button>
-            </VStack>
-          </form>
+              {t('Получить код')}
+            </Button>
+          </VStack>
+        </form>
         <Button
           className={cls.lang}
           max

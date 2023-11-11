@@ -1,6 +1,5 @@
 import { memo } from 'react'
-import { HStack, Logo, Text, Transition } from '@/shared/ui'
-import { Timeouts, Delays } from '../../config'
+import { HStack, Logo, Text } from '@/shared/ui'
 import cls from './LogoForm.module.scss'
 
 export const LogoForm = memo(() => {
@@ -10,26 +9,14 @@ export const LogoForm = memo(() => {
       align='center'
       gap='16'
     >
-      <Transition
-        timeout={Timeouts.LOGO}
-        delay={Delays.LOGO}
-        fromX={100}
-        toX={0}
+      <Logo />
+      <Text
+        className={cls.title}
+        size='l'
+        title
       >
-        <Logo />
-      </Transition>
-      <Transition
-        timeout={Timeouts.LOGO_TEXT}
-        delay={Delays.LOGO_TEXT}
-      >
-        <Text
-          className={cls.title}
-          size='l'
-          title
-        >
-          The Message
-        </Text>
-      </Transition>
+        The Message
+      </Text>
     </HStack>
   )
 })

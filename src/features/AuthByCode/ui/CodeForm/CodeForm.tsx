@@ -2,8 +2,7 @@ import { useForm } from 'effector-forms'
 import { useStore } from 'effector-react'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Input, Text, Transition } from '@/shared/ui'
-import { Timeouts } from '../../config'
+import { Input, Text, VStack } from '@/shared/ui'
 import { codeForm } from '../../lib'
 import { authModel } from '../../model'
 import { Messages } from '../Messages/Messages'
@@ -30,13 +29,9 @@ export const CodeFrom = memo(() => {
   }, [onChange, submit])
 
   return (
-    <Transition
-      timeout={Timeouts.CODE_FORM}
-      fromX={100}
-      className={cls.CodeForm}
-    >
+    <VStack>
       <Messages />
-      <form>
+      <form className={cls.form}>
         <Input
           className={cls.input}
           value={value}
@@ -53,7 +48,7 @@ export const CodeFrom = memo(() => {
           {t('Код состоит из 6 цифр')}
         </Text>
       </form>
-    </Transition>
+    </VStack>
   )
 })
 

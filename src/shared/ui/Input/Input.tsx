@@ -54,8 +54,3 @@ export const Input = memo((props: InputProps) => {
 })
 
 Input.displayName = 'Input'
-
-// <input
-//   className={classNames(cls.Input, mods, [className])}
-//   {...otherProps}
-// />

@@ -3,10 +3,12 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider'
 import { type Theme } from '@/shared/lib'
 
 // eslint-disable-next-line
-export const ThemeDecorator = (theme: Theme) => (Story: StoryFn) => (
-  <ThemeProvider initTheme={theme}>
-    <div className={`app ${theme}`}>
-      <Story />
-    </div>
-  </ThemeProvider>
-)
+export const ThemeDecorator = (theme: Theme) => (Story: StoryFn) => {
+  return (
+    <ThemeProvider initTheme={theme}>
+      <div className={`body ${theme}`} style={{ minHeight: '100vh' }}>
+        <Story />
+      </div>
+    </ThemeProvider>
+  )
+}

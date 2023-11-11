@@ -1,15 +1,18 @@
 .app-light-theme {
+  // common
   --bg-color: #fff;
   --primary-color: #117BD4;
   --secondary-color: #000;
-
-  --input-color: rgb(217 217 217 / 40%);
-  --placeholder-color: #A0A0A0;
-
   --inverted-secondary-color: #fff;
   --inverted-secondary-hover-color: #0f76cb;
 
+  // input
+  --input-color: rgb(217 217 217 / 40%);
+  --placeholder-color: #A0A0A0;
+
+  // clear
   --clear-element-color: rgb(234 234 234 / 50%);
 
+  // message
   --message-bg-color: rgb(239 239 239);
 }

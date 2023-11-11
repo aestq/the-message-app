@@ -1,15 +1,18 @@
 .app-dark-theme {
+  // common
   --bg-color: #1E1F22;
   --primary-color: #766AC8;
   --secondary-color: #ececec;
-
-  --input-color: rgb(150 150 150 / 40%);
-  --placeholder-color: #BCBCBC;
-
   --inverted-secondary-color: #fff;
   --inverted-secondary-hover-color: #5e549a;
 
+  // input
+  --input-color: rgb(150 150 150 / 40%);
+  --placeholder-color: #BCBCBC;
+
+  // clear
   --clear-element-color: rgb(68 68 68 / 50%);
 
+  // message
   --message-bg-color: rgb(56 56 56);
 }

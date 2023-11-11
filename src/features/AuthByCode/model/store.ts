@@ -1,4 +1,5 @@
 import { createEffect, createEvent, createStore, forward, sample } from 'effector'
+import { userModel } from '@/entities/User'
 import { atom } from '@/shared/lib'
 import { codeForm, emailForm } from '../lib'
 import { sendCode } from './services/sendCode'
@@ -29,6 +30,8 @@ export const authModel = atom<AuthStore>(() => {
     clock: codeForm.submit,
     target: sendCodeFx
   })
+
+  userModel.$userData.on(sendCodeFx.doneData, (_, payload) => payload)
 
   return {
     sendEmailFx,

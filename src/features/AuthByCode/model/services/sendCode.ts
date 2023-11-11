@@ -1,11 +1,13 @@
-export const sendCode = async (): Promise<string> => {
+import { type User } from '@/entities/User'
+
+export const sendCode = async (): Promise<User> => {
   return await new Promise((resolve, reject) => {
     setTimeout(() => {
       if(Math.random() > 0.5) {
-        resolve('success')
+        resolve({ id: 1, username: 'username123' })
       } else {
         // eslint-disable-next-line
-        reject('error')
+        reject(new Error('error'))
       }
     }, 2000)
   })

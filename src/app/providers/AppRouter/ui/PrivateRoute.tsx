@@ -1,11 +1,13 @@
+import { useStore } from 'effector-react'
 import { Navigate, Outlet, useLocation } from 'react-router-dom'
+import { userModel } from '@/entities/User'
 import { RoutesPath } from '@/shared/consts'
 
 export const PrivateRoute = () => {
-  const authData = undefined
+  const userData = useStore(userModel.$userData)
   const location = useLocation()
 
-  if(!authData) {
+  if(!userData) {
     return <Navigate to={RoutesPath.ENTRY} state={{ location }} />
   }
 

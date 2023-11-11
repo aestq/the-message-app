@@ -6,7 +6,7 @@ import cls from './EntryPage.module.scss'
 
 export const EntryPage = memo(() => {
   return (
-    <>
+    <div className={cls.EntryPage}>
       <Navbar />
       <HStack
         className={cls.main}
@@ -16,7 +16,7 @@ export const EntryPage = memo(() => {
       >
         <AuthForm />
       </HStack>
-    </>
+    </div>
   )
 })
 

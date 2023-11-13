@@ -46,11 +46,12 @@ export const EmailForm = memo(() => {
               disabled={isLoading}
             />
             <Button
+              className={cls.next}
               theme='primary'
               max
               disabled={isLoading}
             >
-              {t('Получить код')}
+              {t('Далее')}
             </Button>
           </VStack>
         </form>

@@ -1,23 +1,23 @@
 import { memo } from 'react'
-import { HStack, Logo, Text } from '@/shared/ui'
+import { VStack, Logo, Text } from '@/shared/ui'
 import cls from './LogoForm.module.scss'
 
 export const LogoForm = memo(() => {
   return (
-    <HStack
+    <VStack
       justify='center'
       align='center'
       gap='16'
     >
-      <Logo />
+      <Logo size='l' />
       <Text
         className={cls.title}
-        size='l'
+        size='xl'
         title
       >
         The Message
       </Text>
-    </HStack>
+    </VStack>
   )
 })
 

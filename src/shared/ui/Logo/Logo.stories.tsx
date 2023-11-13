@@ -19,3 +19,24 @@ export const Dark: Story = {
   component: Logo,
   decorators: [ThemeDecorator(Theme.DARK)]
 }
+
+export const Size_s: Story = {
+  component: Logo,
+  args: {
+    size: 's'
+  }
+}
+
+export const Size_m: Story = {
+  component: Logo,
+  args: {
+    size: 'm'
+  }
+}
+
+export const Size_l: Story = {
+  component: Logo,
+  args: {
+    size: 'l'
+  }
+}
